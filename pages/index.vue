@@ -52,6 +52,14 @@ main {
 h1 {
   font-family: 'Bricolage Grotesque', sans-serif;
   font-size: 48px;
+  margin-top: 8px;
+  margin-bottom: 32px;
+
+  @media (width > 480px) {
+    font-size: 56px;
+    margin-top: 0;
+    margin-bottom: 24px;
+  }
 
   @media (width > 768px) {
     font-size: 64px;

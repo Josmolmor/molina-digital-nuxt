@@ -129,7 +129,7 @@ const parseStack = (stack: string): string => {
   width: 0; /* Change width to 0 */
   border-left: 1px dashed var(--separator-color); /* Add this line */
   position: absolute;
-  top: 40px;
+  top: 44px;
   left: 50%;
   transform: translateX(-50%);
   will-change: bottom;

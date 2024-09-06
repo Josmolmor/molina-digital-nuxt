@@ -73,13 +73,16 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 32px 0;
-  gap: 20px;
+  gap: 14px;
+  flex-wrap: wrap;
 
   @media (width > 480px) {
+    gap: 20px;
     justify-content: flex-end;
   }
 
   > * {
+    flex-shrink: 0;
     padding: 4px;
     opacity: 0;
     transition:
@@ -105,6 +108,7 @@ header {
     color: var(--text);
     height: 24px;
     width: 24px;
+    flex-shrink: 0;
   }
 
   select {
