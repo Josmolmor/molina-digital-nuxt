@@ -14,9 +14,9 @@
       <div class="timeline-content" :style="{ '--delay': `${index * 0.25}s` }">
         <div class="timeline-header">
           <div class="timeline-header-title">
-            <h3 class="timeline-title">
+            <h2 class="timeline-title">
               {{ $t(item.title) }}
-            </h3>
+            </h2>
             <NuxtLink
               class="timeline-title-link"
               v-if="item.url"
@@ -38,7 +38,6 @@
         <div class="stack-list" v-if="item.stack?.length">
           <span
             v-tooltip="{ content: parseStack(stack), position: 'bottom' }"
-            :aria-label="stack"
             v-for="stack in item.stack"
             :key="stack">
             <component v-if="stack" :is="`${stack}Icon`" />

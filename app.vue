@@ -13,4 +13,12 @@ useSeoMeta({
   ogImage: 'https://example.com/image1.png',
   twitterCard: 'summary_large_image',
 });
+
+const { locale } = useI18n();
+
+useHead({
+  htmlAttrs: {
+    lang: locale.value,
+  },
+});
 </script>
