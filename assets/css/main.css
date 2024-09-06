@@ -1,0 +1,172 @@
+:root {
+    --color-primary: #158876;
+    --color-secondary: #0e2233;
+    --bg-secondary: #fff;
+    --border-color: #ddd;
+
+    --text: #3e3e3e;
+    --text-secondary: #6b7280;
+    --bg: #ededed;
+    --accent-color: #5e69e4;
+    --separator-color: #d5d5d5;
+    --icon-color: #f3f5f4;
+}
+
+.dark-mode {
+    --color-primary: #41b38a;
+    --color-secondary: #fdf9f3;
+    --bg: #030a11;
+    --bg-secondary: #071521;
+    --border-color: #0d2538;
+
+    --text: #ebf4f1;
+    --text-secondary: #9ca3af;
+    --separator-color: #282b2e;
+    --icon-color: #f3f5f4;
+}
+
+.sepia-mode {
+    --color: #433422;
+    --color-secondary: #504231;
+    --bg: #f1e7d0;
+    --bg-secondary: #eae0c9;
+    --border-color: #ded0bf;
+
+    --accent-color: #81a413;
+    --text: #433422;
+    --text-secondary: #504231;
+    --separator-color: #bdb6ad;
+    --icon-color: #f3f5f4;
+}
+
+/* Modern CSS Reset */
+/* Box sizing reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove default padding and margin */
+html, body, h1, h2, h3, h4, h5, h6, p, blockquote, figure, dl, dd {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    letter-spacing: .3px;
+}
+
+/* Ensure body takes up full viewport height */
+html, body {
+    height: 100%;
+}
+
+/* Set a consistent body line-height and inherit fonts */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color .3s;
+    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+    margin-right: auto;
+    margin-left:  auto;
+    max-width: 960px;
+    padding-right: 16px;
+    padding-left:  16px;
+
+    opacity: 1;
+    background-image: radial-gradient(var(--accent-color) 0.05px, var(--bg) 0.425px);
+    background-size: 10px 10px;
+
+    @media (width > 768px) {
+        padding-right: 32px;
+        padding-left:  32px;
+    }
+}
+
+/* Remove list styles */
+ul, ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Anchor reset */
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* Images and media elements should scale properly */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Remove border on all elements by default */
+button, input, select, textarea {
+    border: 0;
+    font: inherit;
+    color: inherit;
+}
+
+/* Normalize button appearance */
+button {
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* Form elements */
+input, button, textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+/* Improve form appearance in dark mode */
+@media (prefers-color-scheme: dark) {
+    input, button, textarea, select {
+        background-color: #333;
+        color: #fff;
+    }
+}
+
+/* Set a uniform base for typography */
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+/* Table resets */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#__nuxt {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Improve focus styles */
+:focus {
+    outline: 2px solid var(--accent-color);
+    border-radius: 2px;
+    outline-offset: 1px;
+}
+
+/* Remove animations and transitions for people who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none;
+        transition: none;
+    }
+}
