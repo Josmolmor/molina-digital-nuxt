@@ -1,42 +1,30 @@
 :root {
-    --color-primary: #158876;
-    --color-secondary: #0e2233;
-    --bg-secondary: #fff;
-    --border-color: #ddd;
-
     --text: #3e3e3e;
     --text-secondary: #6b7280;
     --bg: #ededed;
     --accent-color: #5e69e4;
     --separator-color: #d5d5d5;
     --icon-color: #f3f5f4;
+    --selection: #00bcff;
 }
 
 .dark-mode {
-    --color-primary: #41b38a;
-    --color-secondary: #fdf9f3;
     --bg: #030a11;
-    --bg-secondary: #071521;
-    --border-color: #0d2538;
-
     --text: #ebf4f1;
     --text-secondary: #9ca3af;
     --separator-color: #282b2e;
     --icon-color: #f3f5f4;
+    --selection: #ff004d;
 }
 
 .sepia-mode {
-    --color: #433422;
-    --color-secondary: #504231;
     --bg: #f1e7d0;
-    --bg-secondary: #eae0c9;
-    --border-color: #ded0bf;
-
     --accent-color: #81a413;
     --text: #433422;
     --text-secondary: #504231;
     --separator-color: #bdb6ad;
     --icon-color: #f3f5f4;
+    --selection: #e0ff00;
 }
 
 /* Modern CSS Reset */
@@ -169,4 +157,12 @@ table {
         animation: none;
         transition: none;
     }
+}
+
+::-moz-selection {
+    background-color: var(--selection);
+}
+
+::selection {
+    background-color: var(--selection);
 }
