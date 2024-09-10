@@ -107,6 +107,7 @@ const timelineItems: TimelineItem[] = [
     date: 'Mar 2016 - Aug 2019',
     location: 'Seville',
     description: 'internship_desc',
+    stack: ['sharepoint', 'sharp', 'dotnet', 'php', 'sql'],
   },
 ];
 

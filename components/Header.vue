@@ -22,20 +22,27 @@
       <LinkedinIcon />
     </NuxtLink>
     <NuxtLink
+      :style="{ '--delay': `${3 * 0.25}s` }"
+      v-tooltip="{ content: 'Codepen', position: 'bottom' }"
+      to="https://codepen.io/jmmolina"
+      target="_blank">
+      <CodepenIcon />
+    </NuxtLink>
+    <NuxtLink
       v-for="locale in availableLocales"
       :to="switchLocalePath(locale.code)"
       v-tooltip="{
         content: `${locale.code === 'en' ? 'Cambiar a Inglés' : 'Switch to Spanish'}`,
         position: 'bottom',
       }"
-      :style="{ '--delay': `${3 * 0.25}s` }">
+      :style="{ '--delay': `${4 * 0.25}s` }">
       <LanguageIcon />
     </NuxtLink>
     <label
       class="theme-picker"
       for="theme-select"
       v-tooltip="{ content: 'Theme selector', position: 'bottom' }"
-      :style="{ '--delay': `${4 * 0.25}s` }">
+      :style="{ '--delay': `${5 * 0.25}s` }">
       <SwatchIcon />
       <select id="theme-select" v-model="$colorMode.preference">
         <option value="system">System</option>
