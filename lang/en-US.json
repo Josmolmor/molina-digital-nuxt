@@ -1,6 +1,8 @@
 {
   "salute": "Hey there,",
-  "intro_1": "I'm Molina, a senior software engineer born and based in Seville, Spain.",
+  "intro_1": "JM Molina",
+  "intro_1_2": "Senior software engineer",
+  "intro_1_3": "Seville, Spain",
   "intro_2": "I have a Computer Science degree from the University of Seville, where I graduated in 2016. Over the past",
   "years": "years",
   "intro_3": " I have been working across the full stack but I’ve specialized in front-end web development due to its strong design component, honing my skills in the latest technologies to build accessible, intuitive and responsive user interfaces.",
@@ -22,5 +24,11 @@
   "Babel (Internship)": "Babel (Internship)",
   "iCIMS": "iCIMS",
   "Z1 Digital Studio": "Z1 Digital Studio",
-  "Babel": "Babel"
+  "Babel": "Babel",
+  "locale_switch": "Switch to spanish",
+  "switch_theme": "Switch theme to {theme}",
+  "light": "light",
+  "dark": "dark",
+  "sepia": "sepia",
+  "send_email": "Get in touch"
 }

@@ -190,7 +190,7 @@ const parseStack = (stack: string): string => {
     filter 0.5s ease;
   opacity: 0;
   filter: blur(2px);
-  transform: translateY(16px);
+  transform: translateY(-16px);
   will-change: transform, opacity, filter;
   animation: appear 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
   animation-delay: var(--delay, 0s);

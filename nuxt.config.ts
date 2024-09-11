@@ -20,10 +20,8 @@ export default defineNuxtConfig({
       '@nuxtjs/google-fonts',
       {
         preload: true,
-        text: 'Hey there,',
         families: {
-          Outfit: true,
-          Poppins: true,
+          Inter: [100, 200, 300, 400, 500, 600, 700, 800, 900],
           'Bricolage+Grotesque': true,
         },
       },

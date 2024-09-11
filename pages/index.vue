@@ -1,13 +1,18 @@
 <template>
   <main>
     <div class="entry-text">
-      <h1>{{ $t('salute') }}</h1>
-      <p>
-        {{ $t('intro_1') }}
-      </p>
+      <div class="intro">
+        <img src="~/assets/img/me.jpg" />
+        <p>
+          <span class="name">{{ $t('intro_1') }}</span>
+          <span class="role">{{ $t('intro_1_2') }}</span>
+        </p>
+      </div>
       <p>
         {{ $t('intro_2') }}
-        <strong>{{ new Date().getFullYear() - 2016 }} {{ $t('years') }}</strong>
+        <span class="strong">
+          {{ new Date().getFullYear() - 2016 }} {{ $t('years') }}
+        </span>
         {{ $t('intro_3') }}
       </p>
       <p>
@@ -31,38 +36,72 @@
 
 <script setup lang="ts">
 import Timeline from '@/components/Timeline.vue';
-import { ArrowTopRightOnSquareIcon } from '@heroicons/vue/16/solid';
+import { ArrowTopRightOnSquareIcon, MapPinIcon } from '@heroicons/vue/16/solid';
 import timelineItems from '~/data/timeline';
 </script>
 
 <style scoped>
+@keyframes appear {
+  0% {
+    opacity: 0;
+    filter: blur(1px);
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
 main {
   display: flex;
   flex-direction: column;
   gap: 56px;
-  padding-bottom: 96px;
+  padding: 64px 0 128px;
 }
 
 .entry-text {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease,
+    filter 0.5s ease;
+  will-change: transform, opacity, filter;
+  animation: appear 1s ease forwards;
+
+  .strong {
+    font-weight: 600;
+  }
 }
 
-h1 {
-  font-family: 'Bricolage Grotesque', sans-serif;
-  font-size: 48px;
-  margin-top: 8px;
+.intro {
+  display: flex;
+  align-items: center;
+  gap: 16px;
   margin-bottom: 32px;
 
-  @media (width > 480px) {
-    font-size: 56px;
-    margin-top: 0;
-    margin-bottom: 24px;
+  img {
+    border-radius: 50%;
+    height: 64px;
+    width: 64px;
   }
 
-  @media (width > 768px) {
-    font-size: 64px;
+  p {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+    gap: 4px;
+
+    .name {
+      font-weight: 500;
+    }
+
+    .role {
+      color: var(--text-secondary);
+    }
   }
 }
 

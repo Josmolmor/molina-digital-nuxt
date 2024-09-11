@@ -1,6 +1,8 @@
 {
   "salute": "Hola,",
-  "intro_1": "Soy Molina, un ingeniero de software senior nacido y afincado en Sevilla, España.",
+  "intro_1": "JM Molina",
+  "intro_1_2": "Ingeniero de software senior",
+  "intro_1_3": "Sevilla, España",
   "intro_2": "Soy Licenciado en Informática por la Universidad de Sevilla, donde me gradué en 2016. Durante los últimos ",
   "years": "años",
   "intro_3": "he estado trabajando en todo el stack, pero me he especializado en el desarrollo web front-end debido a su fuerte componente de diseño y perfeccionando mis habilidades en las últimas tecnologías para construir interfaces de usuario accesibles, intuitivas y adaptativas.",
@@ -22,5 +24,11 @@
   "Babel (Internship)": "Babel (Becario)",
   "iCIMS": "iCIMS",
   "Z1 Digital Studio": "Z1 Digital Studio",
-  "Babel": "Babel"
+  "Babel": "Babel",
+  "locale_switch": "Cambiar a inglés",
+  "switch_theme": "Cambiar tema a {theme}",
+  "light": "claro",
+  "dark": "oscuro",
+  "sepia": "sepia",
+  "send_email": "Ponte en contacto conmigo"
 }

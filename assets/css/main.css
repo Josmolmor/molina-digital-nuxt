@@ -1,20 +1,28 @@
 :root {
     --text: #3e3e3e;
-    --text-secondary: #6b7280;
-    --bg: #ededed;
+    --text-secondary: #525762;
+    --bg: rgb(252 253 254 / 1);
     --accent-color: #6873f3;
     --separator-color: #d5d5d5;
     --icon-color: #f3f5f4;
     --selection: #00bcff;
+    --shadow: hsla(250, 6%, 57%, .2) 0px 0px 30px, rgba(219, 216, 224, .2) 0px 0px 0px 1px;
+    --ring-offset-shadow: 0 0 #0000;
+    --ring-shadow: 0 0 #0000;
+    --hover: rgba(0,0,0,0.05);
 }
 
 .dark-mode {
-    --bg: #030a11;
+    --bg: rgb(17 18 18 / 1);
     --text: #ebf4f1;
     --text-secondary: #9ca3af;
     --separator-color: #282b2e;
     --icon-color: #f3f5f4;
     --selection: #ff004d;
+    --shadow: hsla(251, 5%, 45%, .1) 0px 0px 30px, rgba(60, 57, 63, .4) 0px 0px 0px 1px;
+    --ring-offset-shadow: 0 0 #0000;
+    --ring-shadow: 0 0 #0000;
+    --hover: rgba(255,255,255,0.1);
 }
 
 .sepia-mode {
@@ -25,6 +33,7 @@
     --separator-color: #bdb6ad;
     --icon-color: #f3f5f4;
     --selection: #e0ff00;
+    --hover: rgba(67,52,34,0.1);
 }
 
 /* Modern CSS Reset */
@@ -58,7 +67,7 @@ body {
     background-color: var(--bg);
     color: var(--text);
     transition: background-color .3s;
-    font-family: Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
     margin-right: auto;
     margin-left:  auto;
