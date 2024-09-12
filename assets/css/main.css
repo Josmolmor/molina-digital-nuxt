@@ -1,8 +1,8 @@
 :root {
+    --accent-color: #6873f3;
+    --bg: rgb(252 253 254 / 1);
     --text: #3e3e3e;
     --text-secondary: #525762;
-    --bg: rgb(252 253 254 / 1);
-    --accent-color: #6873f3;
     --separator-color: #d5d5d5;
     --icon-color: #f3f5f4;
     --selection: #00bcff;
@@ -13,6 +13,7 @@
 }
 
 .dark-mode {
+    --accent-color: #6873f3;
     --bg: rgb(17 18 18 / 1);
     --text: #ebf4f1;
     --text-secondary: #9ca3af;
@@ -26,8 +27,8 @@
 }
 
 .sepia-mode {
-    --bg: #f1e7d0;
     --accent-color: #81a413;
+    --bg: #f1e7d0;
     --text: #433422;
     --text-secondary: #504231;
     --separator-color: #bdb6ad;
@@ -57,6 +58,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Ensure body takes up full viewport height */
 html, body {
     height: 100%;
+    block-size: 100%;
 }
 
 /* Set a consistent body line-height and inherit fonts */
@@ -66,18 +68,20 @@ body {
     text-rendering: optimizeLegibility;
     background-color: var(--bg);
     color: var(--text);
-    transition: background-color .3s;
     font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-
     margin-right: auto;
     margin-left:  auto;
     max-width: 960px;
     padding-right: 16px;
     padding-left:  16px;
-
-    opacity: 1;
-    background-image: radial-gradient(var(--accent-color) 0.05px, var(--bg) 0.425px);
-    background-size: 32px 34px;
+    background-image:
+            radial-gradient(circle at center, transparent, var(--bg)),
+            radial-gradient(circle at center,
+            color-mix(in oklch, var(--text) 33%, var(--bg)) 0.5px,
+            transparent 1.3px
+            );
+    background-size: 200px 200px, 40px 40px;
+    background-repeat: round, space;
 
     @media (width > 768px) {
         padding-right: 32px;
