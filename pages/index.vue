@@ -60,14 +60,14 @@ import timelineItems from '~/data/timeline';
 main {
   display: flex;
   flex-direction: column;
-  gap: 56px;
+  gap: 48px;
   padding: 64px 0 128px;
 }
 
 .entry-text {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
   transition:
     opacity 0.5s ease,
     transform 0.5s ease,

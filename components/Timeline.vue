@@ -14,9 +14,9 @@
       <div class="timeline-content" :style="{ '--delay': `${index * 0.25}s` }">
         <div class="timeline-header">
           <div class="timeline-header-title">
-            <h2 class="timeline-title">
+            <h1 class="timeline-title">
               {{ $t(item.title) }}
-            </h2>
+            </h1>
             <NuxtLink
               class="timeline-title-link"
               v-if="item.url"
@@ -98,7 +98,7 @@ const parseStack = (stack: string): string => {
 .timeline-container {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 64px;
   color: var(--text);
 }
 
@@ -120,7 +120,7 @@ const parseStack = (stack: string): string => {
     bottom: 100%;
   }
   to {
-    bottom: -20px;
+    bottom: -48px;
   }
 }
 
@@ -182,7 +182,7 @@ const parseStack = (stack: string): string => {
 .timeline-content {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
   flex: 1;
   transition:
     opacity 0.5s ease,
@@ -200,7 +200,7 @@ const parseStack = (stack: string): string => {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  gap: 2px;
+  gap: 4px;
 }
 
 .timeline-header-title {
@@ -222,13 +222,13 @@ const parseStack = (stack: string): string => {
 }
 
 .timeline-title {
-  font-size: 18px;
+  font-size: var(--title-font-size);
+  line-height: 1.2;
   font-weight: 600;
   margin: 0;
 }
 
 .timeline-description {
-  font-size: 14px;
   color: var(--text);
   margin: 0;
   white-space: pre-line;
@@ -247,7 +247,7 @@ const parseStack = (stack: string): string => {
 }
 
 .timeline-date {
-  font-size: 12px;
+  font-size: var(--sub-font-size);
   color: var(--text-secondary);
   display: flex;
   align-items: center;
@@ -260,7 +260,7 @@ const parseStack = (stack: string): string => {
 }
 
 .timeline-location {
-  font-size: 12px;
+  font-size: var(--sub-font-size);
   color: var(--text-secondary);
   display: flex;
   align-items: center;

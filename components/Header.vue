@@ -146,13 +146,5 @@ header {
     width: 24px;
     flex-shrink: 0;
   }
-
-  select {
-    font-size: 14px;
-    border: 1px solid var(--text);
-    border-radius: 4px;
-    background-color: var(--bg);
-    color: var(--text);
-  }
 }
 </style>
