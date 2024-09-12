@@ -208,6 +208,7 @@ const parseStack = (stack: string): string => {
   align-items: center;
   justify-content: center;
   gap: 4px;
+  margin: 0 0 8px;
 }
 
 .timeline-title-link {
@@ -246,19 +247,7 @@ const parseStack = (stack: string): string => {
   }
 }
 
-.timeline-date {
-  font-size: var(--sub-font-size);
-  color: var(--text-secondary);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  > svg {
-    height: 14px;
-    width: 14px;
-  }
-}
-
+.timeline-date,
 .timeline-location {
   font-size: var(--sub-font-size);
   color: var(--text-secondary);
@@ -267,8 +256,8 @@ const parseStack = (stack: string): string => {
   gap: 8px;
 
   > svg {
-    height: 14px;
-    width: 14px;
+    height: 16px;
+    width: 16px;
   }
 }
 </style>
