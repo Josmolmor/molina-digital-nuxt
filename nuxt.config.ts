@@ -14,20 +14,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/css/main.css', '~/assets/css/tooltip.css'],
   plugins: ['~/plugins/tooltip.ts'],
-  modules: [
-    '@nuxtjs/color-mode',
-    [
-      '@nuxtjs/google-fonts',
-      {
-        preload: true,
-        families: {
-          Inter: [100, 200, 300, 400, 500, 600, 700, 800, 900],
-          'Bricolage+Grotesque': true,
-        },
-      },
-    ],
-    '@nuxtjs/i18n',
-  ],
+  modules: ['@nuxtjs/color-mode', '@nuxtjs/i18n', '@nuxt/fonts'],
   i18n: {
     baseUrl: 'https://my-nuxt-app.com',
     locales: [
@@ -50,6 +37,13 @@ export default defineNuxtConfig({
     },
     compilation: {
       strictMessage: false,
+    },
+  },
+  fonts: {
+    defaults: {
+      weights: [400, 500, 600, 700, 800, 900],
+      styles: ['normal', 'italic'],
+      subsets: ['latin-ext', 'latin'],
     },
   },
 });

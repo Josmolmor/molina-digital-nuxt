@@ -11,20 +11,9 @@
           <span class="role">{{ $t('intro_1_2') }}</span>
         </p>
       </div>
-      <p>
-        {{ $t('intro_2') }}
-        <span class="strong">
-          {{ new Date().getFullYear() - 2016 }} {{ $t('years') }}
-        </span>
-        {{ $t('intro_3') }}
+      <p class="about">
+        {{ $t('about') }}
       </p>
-      <p>
-        {{ $t('intro_4') }}
-      </p>
-      <p>
-        {{ $t('intro_5') }}
-      </p>
-      <br />
       <p class="side-project">
         {{ $t('side_project') }}
         <NuxtLink to="https://quizling.vercel.app/" target="_blank">
@@ -78,6 +67,10 @@ main {
   .strong {
     font-weight: 600;
   }
+}
+
+.about {
+  white-space: pre-line;
 }
 
 .intro {

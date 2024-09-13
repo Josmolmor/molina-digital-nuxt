@@ -13,12 +13,12 @@
 
     --font-size: 14px;
     --sub-font-size: 12px;
-    --title-font-size: 22px;
+    --title-font-size: 24px;
 
     @media (width > 768px) {
         --font-size: 16px;
         --sub-font-size: 14px;
-        --title-font-size: 24px;
+        --title-font-size: 28px;
     }
 }
 
@@ -63,6 +63,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, blockquote, figure, dl, dd {
 
 h1, h2, h3, h4, h5, h6 {
     letter-spacing: .3px;
+    font-family: "Guton", Inter, sans-serif;
 }
 
 /* Ensure body takes up full viewport height */
