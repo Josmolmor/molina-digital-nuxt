@@ -1,6 +1,2 @@
-# Allow all web crawlers full access
 User-agent: *
 Disallow:
-
-# Sitemap reference (important for SEO)
-Sitemap: https://www.molina.digital/sitemap.xml

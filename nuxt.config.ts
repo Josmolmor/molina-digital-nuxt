@@ -4,6 +4,71 @@ export default defineNuxtConfig({
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
+      title: 'Jose M Molina – Sr. Software Engineer', // Adjust this to your preferred title
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Jose M Molina, Sr. Software Engineer specialized in modern Front-end web development technologies',
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'Jose M Molina – Sr. Software Engineer',
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: 'Visit my portfolio and learn more about my work.',
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: 'https://molina.digital',
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: '~/assets/img/meta-img.jpg',
+        }, // Add an optimized image path for previews
+        {
+          hid: 'twitter:card',
+          name: 'twitter:card',
+          content: 'summary_large_image',
+        },
+        // { name: 'twitter:site', content: '@YourTwitterHandle' }, // Optional, if you want to include your Twitter handle
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: 'Jose M Molina – Sr. Software Engineer',
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: 'Jose M Molina.',
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: '~/assets/img/meta-img.jpg',
+        }, // Same image as OG
+        { property: 'og:type', content: 'website' },
+        {
+          property: 'og:title',
+          content: 'Jose M Molina',
+        },
+        {
+          property: 'og:description',
+          content: 'Visit my portfolio to learn more about my work.',
+        },
+        {
+          property: 'og:image',
+          content: 'https://molina.digital/og-image.png',
+        }, // Update with your image
+        { property: 'og:url', content: 'https://molina.digital' },
+      ],
+      link: [{ rel: 'canonical', href: 'https://molina.digital' }],
     },
   },
   compatibilityDate: '2024-04-03',
@@ -14,9 +79,9 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/css/main.css', '~/assets/css/tooltip.css'],
   plugins: ['~/plugins/tooltip.ts'],
-  modules: ['@nuxtjs/color-mode', '@nuxtjs/i18n', '@nuxt/fonts'],
+  modules: ['@nuxtjs/color-mode', '@nuxtjs/i18n', '@nuxt/fonts', '@nuxtjs/seo', '@nuxtjs/sitemap', '@nuxtjs/robots'],
   i18n: {
-    baseUrl: 'https://my-nuxt-app.com',
+    baseUrl: 'https://molina.digital',
     locales: [
       {
         code: 'en',
@@ -45,5 +110,8 @@ export default defineNuxtConfig({
       styles: ['normal', 'italic'],
       subsets: ['latin-ext', 'latin'],
     },
+  },
+  sitemap: {
+    hostname: 'https://molina.digital',
   },
 });
