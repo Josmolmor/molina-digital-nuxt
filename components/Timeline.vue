@@ -43,6 +43,15 @@
             <component v-if="stack" :is="`${stack}Icon`" />
           </span>
         </div>
+        <div class="recommendation-link" v-if="item.recommendationLink">
+          <NuxtLink
+            class="recommendation-letter-link"
+            :to="item.recommendationLink"
+            target="_blank">
+            <span>{{ $t('recommendation_letters') }}</span>
+            <component :is="ArrowTopRightOnSquareIcon" />
+          </NuxtLink>
+        </div>
       </div>
     </div>
   </div>
@@ -217,8 +226,8 @@ const parseStack = (stack: string): string => {
   > svg {
     color: var(--text);
     flex-shrink: 0;
-    height: 16px;
-    width: 16px;
+    height: 20px;
+    width: 20px;
   }
 }
 
@@ -244,6 +253,18 @@ const parseStack = (stack: string): string => {
   svg {
     height: 22px;
     width: 22px;
+  }
+}
+
+.recommendation-letter-link {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: flex-start;
+
+  svg {
+    height: 18px;
+    width: 18px;
   }
 }
 

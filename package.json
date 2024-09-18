@@ -20,7 +20,7 @@
     "vue-router": "latest"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=18.19.0"
   },
   "devDependencies": {
     "@nuxtjs/seo": "^2.0.0-rc.21",

@@ -39,6 +39,7 @@ export type TimelineItem = {
   location?: string;
   icon?: object; // Vue component
   stack?: StackItem[];
+  recommendationLink?: string;
 };
 
 const timelineItems: TimelineItem[] = [
@@ -64,6 +65,8 @@ const timelineItems: TimelineItem[] = [
       'cypress',
       'circle',
     ],
+    recommendationLink:
+      'https://github.com/Josmolmor/recommendation-letters/tree/main/icims',
   },
   {
     id: '2',

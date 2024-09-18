@@ -164,8 +164,8 @@ main {
 
     > svg {
       flex-shrink: 0;
-      height: 16px;
-      width: 16px;
+      height: 18px;
+      width: 18px;
     }
   }
 }
