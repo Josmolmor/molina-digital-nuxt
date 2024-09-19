@@ -57,15 +57,14 @@ main {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  transition:
-    opacity 0.5s ease,
-    transform 0.5s ease,
-    filter 0.5s ease;
-  will-change: transform, opacity, filter;
-  animation: appear 1s ease forwards;
 
-  .strong {
-    font-weight: 600;
+  @media (prefers-reduced-motion: no-preference) {
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease,
+      filter 0.5s ease;
+    will-change: transform, opacity, filter;
+    animation: appear 1s ease forwards;
   }
 }
 

@@ -125,9 +125,6 @@ const parseStack = (stack: string): string => {
 }
 
 @keyframes draw-line {
-  from {
-    bottom: 100%;
-  }
   to {
     bottom: -48px;
   }
@@ -139,20 +136,13 @@ const parseStack = (stack: string): string => {
   position: absolute;
   top: 44px;
   left: 50%;
-  transform: translateX(-50%);
-  will-change: bottom;
-  animation: draw-line 1s cubic-bezier(0.2, 0.4, 0.8, 1) forwards;
-}
+  bottom: 0;
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
+  @media (prefers-reduced-motion: no-preference) {
+    bottom: 100%;
+    transform: translateX(-50%);
+    will-change: bottom;
+    animation: draw-line 1.25s cubic-bezier(0.2, 0.4, 0.8, 1) forwards;
   }
 }
 
@@ -173,11 +163,6 @@ const parseStack = (stack: string): string => {
     height: 14px;
     width: 14px;
   }
-
-  &.active {
-    will-change: transform;
-    animation: pulse 1.5s infinite;
-  }
 }
 
 @keyframes appear {
@@ -193,16 +178,19 @@ const parseStack = (stack: string): string => {
   flex-direction: column;
   gap: 24px;
   flex: 1;
-  transition:
-    opacity 0.5s ease,
-    transform 0.5s ease,
-    filter 0.5s ease;
-  opacity: 0;
-  filter: blur(2px);
-  transform: translateY(-16px);
-  will-change: transform, opacity, filter;
-  animation: appear 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-  animation-delay: var(--delay, 0s);
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease,
+      filter 0.5s ease;
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateY(-16px);
+    will-change: transform, opacity, filter;
+    animation: appear 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    animation-delay: var(--delay, 0s);
+  }
 }
 
 .timeline-header {
