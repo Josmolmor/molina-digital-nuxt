@@ -28,7 +28,8 @@ export type StackItem =
   | 'sharp'
   | 'dotnet'
   | 'php'
-  | 'sql';
+  | 'sql'
+  | 'language';
 
 export type TimelineItem = {
   id: string;
@@ -64,6 +65,7 @@ const timelineItems: TimelineItem[] = [
       'jest',
       'cypress',
       'circle',
+      'language'
     ],
     recommendationLink:
       'https://github.com/Josmolmor/recommendation-letters/tree/main/icims',

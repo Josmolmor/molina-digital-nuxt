@@ -97,6 +97,8 @@ const parseStack = (stack: string): string => {
       return 'PHP';
     case 'sql':
       return 'SQL';
+    case 'language':
+      return 'Internationalization/Localization'
     default:
       return stack.charAt(0).toUpperCase() + stack.slice(1);
   }
