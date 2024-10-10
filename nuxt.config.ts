@@ -79,7 +79,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/css/main.css', '~/assets/css/tooltip.css'],
   plugins: ['~/plugins/tooltip.ts'],
-  modules: ['@nuxtjs/color-mode', '@nuxtjs/i18n', '@nuxt/fonts', '@nuxtjs/seo', '@nuxtjs/sitemap', '@nuxtjs/robots'],
+  modules: ['@nuxtjs/color-mode', '@nuxtjs/i18n', '@nuxt/fonts', '@nuxtjs/seo', '@nuxtjs/sitemap', '@nuxtjs/robots', '@nuxt/image'],
   i18n: {
     baseUrl: 'https://molina.digital',
     locales: [

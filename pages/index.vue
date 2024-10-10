@@ -6,50 +6,41 @@
           <div class="avatar-bg"></div>
           <img src="~/assets/img/me.jpg" />
         </div>
-        <p>
+        <div class="personal">
           <span class="name">{{ $t('intro_1') }}</span>
           <span class="role">{{ $t('intro_1_2') }}</span>
-        </p>
+        </div>
       </div>
       <p class="about">
         {{ $t('about') }}
       </p>
-      <p class="side-project">
-        {{ $t('side_project') }}
-        <NuxtLink to="https://quizling.vercel.app/" target="_blank">
-          Quizling
-          <component :is="ArrowTopRightOnSquareIcon" />
-        </NuxtLink>
-      </p>
     </div>
+    <SideProjects />
     <Timeline :items="timelineItems" />
   </main>
 </template>
 
 <script setup lang="ts">
 import Timeline from '@/components/Timeline.vue';
-import { ArrowTopRightOnSquareIcon, MapPinIcon } from '@heroicons/vue/16/solid';
 import timelineItems from '~/data/timeline';
 </script>
 
 <style scoped>
-@keyframes appear {
-  0% {
-    opacity: 0;
-    filter: blur(1px);
-    transform: translateY(-8px);
-  }
-  100% {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateY(0);
-  }
+h1,
+h2,
+span,
+p,
+svg {
+  will-change: color, background-color;
+  transition:
+    0.3s background-color ease,
+    0.3s color ease;
 }
 
 main {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 5rem;
   padding: 64px 0 128px;
 }
 
@@ -133,7 +124,7 @@ main {
     }
   }
 
-  p {
+  .personal {
     display: flex;
     flex-direction: column;
     line-height: 1.25;

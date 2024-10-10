@@ -1,51 +1,51 @@
 .fancy-tooltip {
-    position: fixed;
-    background-color: var(--text);
-    color: var(--bg);
-    padding: 8px 12px;
-    border-radius: 4px;
-    z-index: 9999;
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out;
-    pointer-events: none;
-    font-weight: 500;
+  position: fixed;
+  background-color: var(--text);
+  color: var(--bg);
+  padding: 8px 12px;
+  border-radius: 4px;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  pointer-events: none;
+  font-weight: 500;
 }
 
 .fancy-tooltip.show {
-    opacity: 1;
+  opacity: 1;
 }
 
 .fancy-tooltip::after {
-    content: '';
-    position: absolute;
-    border-style: solid;
-    border-width: 5px;
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 5px;
 }
 
-.fancy-tooltip[data-position="top"]::after {
-    bottom: -10px;
-    left: 50%;
-    margin-left: -5px;
-    border-color: var(--text) transparent transparent transparent;
+.fancy-tooltip[data-position='top']::after {
+  bottom: -9px;
+  left: 50%;
+  margin-left: -5px;
+  border-color: var(--text) transparent transparent transparent;
 }
 
-.fancy-tooltip[data-position="right"]::after {
-    top: 50%;
-    left: -10px;
-    margin-top: -5px;
-    border-color: var(--text) transparent transparent;
+.fancy-tooltip[data-position='right']::after {
+  top: 50%;
+  left: -9px;
+  margin-top: -4px;
+  border-color: var(--text) transparent transparent;
 }
 
-.fancy-tooltip[data-position="bottom"]::after {
-    top: -10px;
-    left: 50%;
-    margin-left: -5px;
-    border-color: transparent transparent var(--text) transparent;
+.fancy-tooltip[data-position='bottom']::after {
+  top: -9px;
+  left: 50%;
+  margin-left: -5px;
+  border-color: transparent transparent var(--text) transparent;
 }
 
-.fancy-tooltip[data-position="left"]::after {
-    top: 50%;
-    right: -10px;
-    margin-top: -5px;
-    border-color: transparent transparent transparent var(--text);
+.fancy-tooltip[data-position='left']::after {
+  top: 50%;
+  right: -10px;
+  margin-top: -5px;
+  border-color: transparent transparent transparent var(--text);
 }

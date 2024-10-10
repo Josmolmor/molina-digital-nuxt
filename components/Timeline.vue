@@ -1,56 +1,69 @@
 <template>
-  <div class="timeline-container">
-    <div
-      v-for="(item, index) in items"
-      :key="item.id"
-      class="timeline-item-container">
-      <div class="timeline-line-container">
-        <div v-if="item.icon" class="timeline-icon">
-          <component :is="item.icon" />
+  <div>
+    <h1>Experience</h1>
+    <p class="intro">
+      Over 8 years of experience as a software engineer, specializing in
+      front-end development with technologies like React, Next.js, Vue and
+      TypeScript. Led and contributed to global, asynchronous teams, delivering
+      high-quality UIs and scalable solutions for companies such as iCIMS and
+      Z1. Adept at Agile practices, managing teams, and mentoring junior
+      developers.
+    </p>
+    <div class="timeline-container">
+      <div
+        v-for="(item, index) in items"
+        :key="item.id"
+        class="timeline-item-container">
+        <div class="timeline-line-container">
+          <div v-if="item.icon" class="timeline-icon">
+            <component :is="item.icon" />
+          </div>
+          <div v-else class="timeline-dot"></div>
+          <div v-if="index < items.length - 1" class="timeline-line"></div>
         </div>
-        <div v-else class="timeline-dot"></div>
-        <div v-if="index < items.length - 1" class="timeline-line"></div>
-      </div>
-      <div class="timeline-content" :style="{ '--delay': `${index * 0.25}s` }">
-        <div class="timeline-header">
-          <div class="timeline-header-title">
-            <h1 class="timeline-title">
-              {{ $t(item.title) }}
-            </h1>
+        <div
+          class="timeline-content"
+          :style="{ '--delay': `${index * 0.25}s` }">
+          <div class="timeline-header">
+            <div class="timeline-header-title">
+              <h2 class="timeline-title">
+                {{ $t(item.title) }}
+              </h2>
+              <NuxtLink
+                class="timeline-title-link"
+                v-if="item.url"
+                :to="item.url"
+                target="_blank">
+                <component :is="ArrowTopRightOnSquareIcon" />
+              </NuxtLink>
+            </div>
+            <span class="timeline-date">
+              <component :is="CalendarDaysIcon" />
+              {{ $t(item.date) }}
+            </span>
+            <span v-if="item.location" class="timeline-location">
+              <component :is="MapPinIcon" />
+              {{ $t(item.location) }}
+            </span>
+          </div>
+          <p class="timeline-description" v-html="$t(item.description)"></p>
+          <div class="stack-list" v-if="item.stack?.length">
+            <span
+              v-tooltip="{ content: parseStack(stack), position: 'bottom' }"
+              v-for="stack in item.stack"
+              :key="stack">
+              <component v-if="stack" :is="`${stack}Icon`" />
+            </span>
+          </div>
+          <div class="recommendation-link" v-if="item.recommendationLink">
             <NuxtLink
-              class="timeline-title-link"
-              v-if="item.url"
-              :to="item.url"
+              class="recommendation-letter-link"
+              :to="item.recommendationLink"
               target="_blank">
+              <span>{{ $t('recommendation_letters') }}</span>
               <component :is="ArrowTopRightOnSquareIcon" />
             </NuxtLink>
           </div>
-          <span class="timeline-date">
-            <component :is="CalendarDaysIcon" />
-            {{ $t(item.date) }}
-          </span>
-          <span v-if="item.location" class="timeline-location">
-            <component :is="MapPinIcon" />
-            {{ $t(item.location) }}
-          </span>
-        </div>
-        <p class="timeline-description" v-html="$t(item.description)"></p>
-        <div class="stack-list" v-if="item.stack?.length">
-          <span
-            v-tooltip="{ content: parseStack(stack), position: 'bottom' }"
-            v-for="stack in item.stack"
-            :key="stack">
-            <component v-if="stack" :is="`${stack}Icon`" />
-          </span>
-        </div>
-        <div class="recommendation-link" v-if="item.recommendationLink">
-          <NuxtLink
-            class="recommendation-letter-link"
-            :to="item.recommendationLink"
-            target="_blank">
-            <span>{{ $t('recommendation_letters') }}</span>
-            <component :is="ArrowTopRightOnSquareIcon" />
-          </NuxtLink>
         </div>
       </div>
     </div>
@@ -98,7 +111,7 @@ const parseStack = (stack: string): string => {
     case 'sql':
       return 'SQL';
     case 'language':
-      return 'Internationalization/Localization'
+      return 'Internationalization/Localization';
     default:
       return stack.charAt(0).toUpperCase() + stack.slice(1);
   }
@@ -106,6 +119,55 @@ const parseStack = (stack: string): string => {
 </script>
 
 <style scoped>
+h1,
+h2,
+span,
+p,
+svg {
+  will-change: color, background-color;
+  transition:
+    0.3s background-color ease,
+    0.3s color ease;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+
+  & + p {
+    margin-bottom: 2rem;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease,
+      filter 0.5s ease;
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateY(-16px);
+    will-change: transform, opacity, filter;
+    animation: appear 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    animation-delay: var(--delay, 0s);
+  }
+}
+
+.intro {
+  @media (prefers-reduced-motion: no-preference) {
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease,
+      filter 0.5s ease;
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateY(-16px);
+    will-change: transform, opacity, filter;
+    animation: appear 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    animation-delay: var(--delay, 0s);
+  }
+}
+
 .timeline-container {
   display: flex;
   flex-direction: column;
