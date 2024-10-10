@@ -25,5 +25,12 @@
   "dark": "dark",
   "sepia": "sepia",
   "send_email": "Get in touch",
-  "recommendation_letters": "Recommendation letters"
+  "recommendation_letters": "Recommendation letters",
+  "intro_side_projects": "Often built using release candidate or canary versions of major frameworks and new trendy libraries as part of my exploration of new technologies. Sometimes, it's simply coding for the fun of it. These projects showcase my passion for experimenting with new ideas, refining product designs, and enhancing UX. Check out some of my recent work:",
+  "side_projects_title": "Side projects",
+  "intro_experience": "Over 8 years of experience as a software engineer, specializing in front-end development with technologies like React, Next.js, Vue, and TypeScript. Led and contributed to global, asynchronous teams, delivering high-quality UIs and scalable solutions for companies such as iCIMS and Z1. Adept at Agile practices, managing teams, and mentoring junior developers.",
+  "experience_title": "Experience",
+  "quizling_desc": "Trivia like app using open trivia database API with leaderboard and user analytics.",
+  "cooba_desc": "An easy way to split event expenses.",
+  "check_out_the_code": "Check out the code"
 }

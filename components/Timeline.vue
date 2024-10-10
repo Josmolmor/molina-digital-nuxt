@@ -1,14 +1,7 @@
 <template>
   <div>
-    <h1>Experience</h1>
-    <p class="intro">
-      Over 8 years of experience as a software engineer, specializing in
-      front-end development with technologies like React, Next.js, Vue and
-      TypeScript. Led and contributed to global, asynchronous teams, delivering
-      high-quality UIs and scalable solutions for companies such as iCIMS and
-      Z1. Adept at Agile practices, managing teams, and mentoring junior
-      developers.
-    </p>
+    <h1 class="blur-appear">{{ $t('experience_title') }}</h1>
+    <p class="intro blur-appear">{{ $t('intro_experience') }}</p>
     <div class="timeline-container">
       <div
         v-for="(item, index) in items"
@@ -22,7 +15,7 @@
           <div v-if="index < items.length - 1" class="timeline-line"></div>
         </div>
         <div
-          class="timeline-content"
+          class="timeline-content blur-appear"
           :style="{ '--delay': `${index * 0.25}s` }">
           <div class="timeline-header">
             <div class="timeline-header-title">
@@ -138,34 +131,6 @@ h1 {
   & + p {
     margin-bottom: 2rem;
   }
-
-  @media (prefers-reduced-motion: no-preference) {
-    transition:
-      opacity 0.5s ease,
-      transform 0.5s ease,
-      filter 0.5s ease;
-    opacity: 0;
-    filter: blur(2px);
-    transform: translateY(-16px);
-    will-change: transform, opacity, filter;
-    animation: appear 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-    animation-delay: var(--delay, 0s);
-  }
-}
-
-.intro {
-  @media (prefers-reduced-motion: no-preference) {
-    transition:
-      opacity 0.5s ease,
-      transform 0.5s ease,
-      filter 0.5s ease;
-    opacity: 0;
-    filter: blur(2px);
-    transform: translateY(-16px);
-    will-change: transform, opacity, filter;
-    animation: appear 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-    animation-delay: var(--delay, 0s);
-  }
 }
 
 .timeline-container {
@@ -229,32 +194,11 @@ h1 {
   }
 }
 
-@keyframes appear {
-  100% {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateY(0);
-  }
-}
-
 .timeline-content {
   display: flex;
   flex-direction: column;
   gap: 24px;
   flex: 1;
-
-  @media (prefers-reduced-motion: no-preference) {
-    transition:
-      opacity 0.5s ease,
-      transform 0.5s ease,
-      filter 0.5s ease;
-    opacity: 0;
-    filter: blur(2px);
-    transform: translateY(-16px);
-    will-change: transform, opacity, filter;
-    animation: appear 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-    animation-delay: var(--delay, 0s);
-  }
 }
 
 .timeline-header {

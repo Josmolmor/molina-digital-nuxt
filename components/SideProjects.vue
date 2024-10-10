@@ -1,12 +1,8 @@
 <template>
-  <div class="container">
-    <h1>Side projects</h1>
+  <div class="container blur-appear">
+    <h1>{{ $t('side_projects_title') }}</h1>
     <p>
-      Often built using release candidate or canary versions of major frameworks
-      and new trendy libraries as part of my exploration of new technologies.
-      Sometimes, it's simply coding for the fun of it. These projects showcase
-      my passion for experimenting with new ideas, refining product designs, and
-      enhancing UX. Check out some of my recent work:
+      {{ $t('intro_side_projects') }}
     </p>
     <div class="content">
       <div v-for="(project, index) in projects" :key="project.name">
@@ -15,14 +11,14 @@
             <NuxtImg class="project-image" :src="project.image" />
           </div>
           <span>{{ project.name }}</span>
-          <p>{{ project.description }}</p>
+          <p className="desc">{{ project.description }}</p>
         </NuxtLink>
         <NuxtLink
           class="github-link"
           :to="`https://github.com/Josmolmor/${project.name}`"
           target="_blank">
           <GithubIcon />
-          <span>Check out the code</span>
+          <span>{{ $t('check_out_the_code') }}</span>
         </NuxtLink>
       </div>
     </div>
@@ -30,36 +26,26 @@
 </template>
 
 <script lang="ts" setup>
+const { t } = useI18n();
+
 const projects = [
   // Added the projects array
   {
     name: 'quizling',
     image: '/quizling-meta-img.jpg',
-    description:
-      'Trivia like app using open trivia database API with leaderboard and user analytics.',
+    description: t('quizling_desc'),
     to: 'http://quizling.vercel.app/',
   },
   {
     name: 'cooba',
     image: '/cooba-meta-img.jpg',
-    description: 'An easy way to split event expenses.',
+    description: t('cooba_desc'),
     to: 'https://cooba-six.vercel.app/',
   },
 ];
 </script>
 
 <style scoped>
-.container {
-  @media (prefers-reduced-motion: no-preference) {
-    transition:
-      opacity 0.5s ease,
-      transform 0.5s ease,
-      filter 0.5s ease;
-    will-change: transform, opacity, filter;
-    animation: appear 1s ease forwards;
-  }
-}
-
 h1,
 h2,
 span,
@@ -101,6 +87,10 @@ h1 {
   p {
     color: var(--text-secondary);
   }
+}
+
+.desc {
+  font-size: 0.875rem;
 }
 
 .content > * {

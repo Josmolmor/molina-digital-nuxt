@@ -4,7 +4,7 @@
       <div class="intro">
         <div class="avatar-container">
           <div class="avatar-bg"></div>
-          <img src="~/assets/img/me.jpg" />
+          <NuxtImg src="/me.jpg" />
         </div>
         <div class="personal">
           <span class="name">{{ $t('intro_1') }}</span>
@@ -121,6 +121,8 @@ main {
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
+      pointer-events: none;
+      user-select: none;
     }
   }
 
